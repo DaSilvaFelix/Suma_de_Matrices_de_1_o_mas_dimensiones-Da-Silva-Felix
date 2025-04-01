@@ -3,23 +3,23 @@ from flask_cors import CORS
 import logging
 
 app = Flask(__name__)
-CORS(app)  # Habilitar CORS para solicitudes cruzadas
+CORS(app)   
 logging.basicConfig(level=logging.DEBUG)
 
 @app.route("/", methods=["POST"])
 def handle_request():
     try:
-        # Verificar si los datos están presentes
+        
         data = request.get_json()
         if not data:
             logging.warning("No se recibieron datos en la solicitud")
             return jsonify({"error": "No se enviaron datos"}), 400
         
-        # Obtener los valores de los arrays
+         
         table_one_values = data.get("tableOneValues", [])
         table_two_values = data.get("tableTwoValues", [])
 
-        # Validar que sean listas y que tengan la misma longitud
+         
         if not isinstance(table_one_values, list) or not isinstance(table_two_values, list):
             logging.error("Los datos enviados no son listas")
             return jsonify({"error": "Los valores enviados deben ser listas"}), 400
@@ -28,7 +28,7 @@ def handle_request():
             logging.error("Las listas tienen longitudes diferentes")
             return jsonify({"error": "Las listas deben tener la misma longitud"}), 400
 
-        # Validar que todos los elementos de las listas sean números
+        
         try:
             table_one_values = [int(value) for value in table_one_values]
             table_two_values = [int(value) for value in table_two_values]
@@ -36,7 +36,7 @@ def handle_request():
             logging.error("Al menos uno de los valores no es numérico")
             return jsonify({"error": "Todos los valores de las listas deben ser números"}), 400
 
-        # Realizar la suma de los elementos
+      
         sum_result = [
             table_one_values[i] + table_two_values[i]
             for i in range(len(table_one_values))
