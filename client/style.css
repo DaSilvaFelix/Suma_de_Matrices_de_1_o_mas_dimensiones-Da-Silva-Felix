@@ -1,0 +1,79 @@
+body {
+  margin: 0%;
+  padding: 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+.container {
+  height: 70%;
+  width: 60%;
+  background-color: aliceblue;
+  border-radius: 10px;
+}
+h2 {
+  margin-left: 20px;
+  font-family: monospace, sans-serif;
+}
+.tables {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+table input {
+  width: 4ch;
+  text-align: center;
+  font-size: 16px;
+  background-color: aliceblue;
+  border-radius: 2.5px;
+}
+
+table input[type="number"]::-webkit-inner-spin-button,
+table input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+table input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.tables button {
+  background-color: #ffffff;
+  border: 1px solid rgb(209, 213, 219);
+  border-radius: 0.5rem;
+  color: #111827;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+.tables button:hover {
+  background-color: #f9fafb;
+}
+
+.tables button:focus {
+  outline: 2px solid rgba(0, 0, 0, 0.1);
+  outline-offset: 2px;
+}
+
+.tables button:focus-visible {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
